@@ -25,6 +25,7 @@
   - Unified API for generating text, structured objects, and tool calls with LLMs
   - Hooks for building dynamic chat and generative user interfaces
   - Supports xAI (default), OpenAI, Fireworks, and other model providers
+  - **AI SDK v5 Ready**: Full support for the latest streaming protocol
 - [shadcn/ui](https://ui.shadcn.com)
   - Styling with [Tailwind CSS](https://tailwindcss.com)
   - Component primitives from [Radix UI](https://radix-ui.com) for accessibility and flexibility
@@ -33,6 +34,10 @@
   - [Vercel Blob](https://vercel.com/storage/blob) for efficient file storage
 - [Auth.js](https://authjs.dev)
   - Simple and secure authentication
+- **Research Integration**
+  - Integration with LangGraph Interview Panel for ESG research
+  - Real-time streaming of research progress and interviews
+  - Support for both chat and research modes
 
 ## Model Providers
 

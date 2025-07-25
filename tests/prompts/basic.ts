@@ -23,9 +23,8 @@ export const TEST_PROMPTS: Record<string, ModelMessage> = {
     role: 'user',
     content: [
       {
-        type: 'file',
-        mediaType: '...',
-        data: '...',
+        type: 'image',
+        image: '...'
       },
       {
         type: 'text',

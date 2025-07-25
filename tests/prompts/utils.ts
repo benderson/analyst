@@ -1,6 +1,5 @@
 import { generateId, type ModelMessage } from 'ai';
 import { TEST_PROMPTS } from './basic';
-import type { LanguageModelV2StreamPart } from '@ai-sdk/provider';
 
 export function compareMessages(
   firstMessage: ModelMessage,
@@ -40,19 +39,19 @@ export function compareMessages(
   return true;
 }
 
-const textToDeltas = (text: string): LanguageModelV2StreamPart[] => {
+const textToDeltas = (text: string): any[] => {
   const id = generateId();
 
   const deltas = text.split(' ').map((char) => ({
     id,
-    type: 'text-delta' as const,
+    type: 'text' as const,
     delta: `${char} `,
   }));
 
   return [{ id, type: 'text-start' }, ...deltas, { id, type: 'text-end' }];
 };
 
-const reasoningToDeltas = (text: string): LanguageModelV2StreamPart[] => {
+const reasoningToDeltas = (text: string): any[] => {
   const id = generateId();
 
   const deltas = text.split(' ').map((char) => ({
@@ -71,7 +70,7 @@ const reasoningToDeltas = (text: string): LanguageModelV2StreamPart[] => {
 export const getResponseChunksByPrompt = (
   prompt: ModelMessage[],
   isReasoningEnabled = false,
-): LanguageModelV2StreamPart[] => {
+): any[] => {
   const recentMessage = prompt.at(-1);
 
   if (!recentMessage) {
@@ -254,5 +253,5 @@ As we move forward, Silicon Valley continues to reinvent itself. While some pred
     ];
   }
 
-  return [{ id: '6', type: 'text-delta', delta: 'Unknown test prompt!' }];
+  return [{ id: '6', type: 'text', delta: 'Unknown test prompt!' }];
 };

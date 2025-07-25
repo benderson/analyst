@@ -52,7 +52,7 @@ export const titleModel = new MockLanguageModelV2({
       initialDelayInMs: 1000,
       chunks: [
         { id: '1', type: 'text-start' },
-        { id: '1', type: 'text-delta', delta: 'This is a test title' },
+        { id: '1', type: 'text', delta: 'This is a test title' },
         { id: '1', type: 'text-end' },
         {
           type: 'finish',

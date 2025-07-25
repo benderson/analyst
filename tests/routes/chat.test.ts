@@ -52,7 +52,7 @@ test.describe
       });
       expect(response.status()).toBe(200);
 
-      const text = await response.text();
+      const text = await response.text.text();
       const lines = text.split('\n');
 
       const [_, ...rest] = lines;
